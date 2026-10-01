@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f7f7f4">
+  <meta name="description" content="Estimate a mobile phone's price category from its hardware specifications.">
+  <title>Worthwise — Mobile price estimator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/details.css">
+  <style>.model-note{font:9px 'DM Mono',monospace;color:#888c82;margin-top:18px}.model-note span{display:inline-grid;place-items:center;width:15px;height:15px;border:1px solid #b9bdb1;border-radius:50%;font:9px 'DM Mono',monospace;margin-right:5px}</style>
+</head>
+<body>
+  <header class="topbar wrap">
+    <a class="brand" href="#top" aria-label="Worthwise home"><span class="brand-icon">w.</span> worthwise</a>
+    <nav><a href="#how-it-works">How it works</a><a class="nav-cta" href="#estimator">Estimate yours <span>↗</span></a></nav>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> PHONE PRICES, MADE A LITTLE CLEARER</div>
+        <h1>Know your<br>phone’s <span>worth.</span></h1>
+        <p class="hero-text">See which Indian price tier fits your phone. Add a few specs and get a quick, easy-to-understand estimate.</p>
+        <p class="model-note"><span>i</span> Preview model · trained on generated examples</p>
+        <a class="hero-link" href="#estimator">Check your phone <span>↓</span></a>
+        <div class="hero-note"><span class="note-star">✳</span><span>Eight hardware signals<br><b>One clear estimate</b></span></div>
+      </div>
+      <div class="hero-art" aria-label="Illustration of a smartphone">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="spark spark-a">✳</div><div class="spark spark-b">✦</div>
+        <div class="phone"><div class="phone-camera"></div><div class="phone-screen"><div class="screen-time">9:41</div><div class="screen-widget"><span>YOUR DEVICE</span><strong>Worth<br>knowing.</strong><i>● &nbsp;● &nbsp;●</i></div><div class="screen-dock"><b>◉</b><b>▧</b><b>◌</b><b>✉</b></div></div></div>
+        <div class="float-tag tag-top"><span class="tag-icon">₹</span><span><small>PRICE TIERS IN</small><b>Indian rupees</b></span></div>
+        <div class="float-tag tag-bottom"><span class="tag-icon tag-lime">✳</span><span><small>YOUR RESULT</small><b>A clearer price tier</b></span></div>
+      </div>
+    </section>
+
+    <section class="price-guide wrap" aria-label="Indian phone price category ranges">
+      <div class="guide-heading"><span class="eyebrow">A QUICK PRICE GUIDE</span><span class="guide-currency">INDIA · INR ₹</span></div>
+      <div class="guide-grid"><article><span>01 / EVERYDAY</span><b>Budget</b><strong>Under ₹15,000</strong></article><article><span>02 / BALANCED</span><b>Mid-range</b><strong>₹15,000–₹29,999</strong></article><article><span>03 / ADVANCED</span><b>Premium</b><strong>₹30,000–₹59,999</strong></article><article><span>04 / TOP TIER</span><b>Flagship</b><strong>₹60,000+</strong></article></div>
+    </section>
+
+    <section class="estimator-section" id="estimator">
+      <div class="wrap estimator-layout">
+      <div class="section-intro"><div class="eyebrow">01 / DEVICE DETAILS</div><h2>Let’s meet<br>your phone.</h2><p>Don’t worry if you’re not sure about every spec. A close estimate is a good place to start.</p><div class="step"><span>01</span><i></i><span class="step-muted">02</span><small>YOUR ESTIMATE</small></div><div class="inr-stamp"><span>₹</span><div><b>Made for India</b><small>All price ranges shown in INR</small></div></div></div>
+        <form class="form-card" id="predict-form">
+          <div class="form-heading"><div><span class="eyebrow">TELL US THE SPECS</span><h3>What’s under the hood?</h3></div><span class="form-count">8 DETAILS</span></div>
+          <div class="fields">
+            <label class="field">Memory <span class="hint">RAM</span><div class="input-wrap"><input type="number" name="ram" min="512" max="12000" step="512" value="4000" required><span>MB</span></div><input class="range" type="range" min="512" max="12000" step="512" value="4000" data-for="ram"></label>
+            <label class="field">Storage<div class="select-wrap"><select name="storage"><option>8</option><option>16</option><option>32</option><option>64</option><option selected>128</option><option>256</option><option>512</option></select><span>GB</span></div></label>
+            <label class="field">Battery<div class="input-wrap"><input type="number" name="battery" min="1500" max="7000" step="100" value="4500" required><span>mAh</span></div><input class="range" type="range" min="1500" max="7000" step="100" value="4500" data-for="battery"></label>
+            <label class="field">Main camera<div class="input-wrap"><input type="number" name="camera" min="2" max="200" step="2" value="48" required><span>MP</span></div></label>
+            <label class="field">Display size<div class="input-wrap"><input type="number" name="screen" min="4" max="7.5" step="0.1" value="6.2" required><span>in</span></div></label>
+            <label class="field">Resolution<div class="select-wrap"><select name="resolution"><option value="320">320p</option><option value="480">480p</option><option value="720">720p</option><option value="1080" selected>1080p</option><option value="1440">1440p</option><option value="2160">2160p</option></select></div></label>
+            <label class="field">Processor cores<div class="select-wrap"><select name="cores"><option>2</option><option>4</option><option>6</option><option selected>8</option></select><span>cores</span></div></label>
+            <label class="field connectivity">Connectivity<div class="toggle-row"><span>5G network</span><label class="switch"><input type="checkbox" name="five_g" checked><span class="slider"></span></label></div></label>
+          </div>
+          <div class="form-footer"><span><b class="secure-dot">●</b> Your details stay on this device</span><button type="submit" class="submit-btn">Estimate my phone <span>↗</span></button></div>
+          <div class="error" id="error" role="alert" hidden></div>
+        </form>
+      </div>
+    </section>
+
+    <section class="result-section wrap" id="result" hidden aria-live="polite">
+      <div class="result-kicker eyebrow">02 / YOUR ESTIMATE</div>
+      <div class="result-card"><div class="result-main"><div class="category-icon">✳</div><div class="eyebrow">YOUR PHONE FALLS IN</div><h2 id="category">—</h2><div class="price-band" id="band">—</div><p id="description"></p><div class="confidence"><span>Model confidence</span><b id="confidence">—</b></div></div><div class="result-side"><div class="eyebrow">CATEGORY BREAKDOWN</div><h3>How it compares</h3><div class="probabilities" id="probabilities"></div><p class="fineprint">An estimate based on hardware only. Brand, condition, location, and market demand can affect actual prices.</p></div></div>
+      <button class="reset-btn" id="reset">← Edit device details</button>
+    </section>
+
+    <section class="how wrap" id="how-it-works"><div class="how-top"><div><div class="eyebrow">A LITTLE CONTEXT GOES A LONG WAY</div><h2>Specs tell a story.</h2></div><p>Our model looks at the hardware people use to compare phones, then places your device into a familiar price tier.</p></div><div class="signal-grid"><article><span>01</span><div class="signal-icon">▤</div><h3>Everyday power</h3><p>RAM, processor cores, and battery capacity.</p></article><article><span>02</span><div class="signal-icon">◫</div><h3>Room to create</h3><p>Storage, camera resolution, and screen size.</p></article><article><span>03</span><div class="signal-icon">⌗</div><h3>Ready for more</h3><p>Display detail and next-generation connectivity.</p></article></div></section>
+  </main>
+  <footer class="footer"><div class="wrap footer-inner"><a class="brand" href="#top"><span class="brand-icon">w.</span> worthwise</a><span>Useful estimates for everyday decisions.</span><span>Built with a machine learning model · 2026</span></div></footer>
+  <script src="/app.js"></script>
+</body>
+</html>
