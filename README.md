@@ -18,6 +18,16 @@ python web_app.py
 
 Then open <http://127.0.0.1:5000>. The website is in `website/`; Flask serves the page and the prediction API.
 
+## Deploy the website on Render
+
+Push the latest project files to GitHub, then create a **Web Service** in Render and connect this repository's `main` branch. Use:
+
+- Runtime: Python 3
+- Build command: `pip install -r requirements.txt`
+- Start command: `gunicorn web_app:app`
+
+Render will provide a public `onrender.com` URL when deployment succeeds. The web service uses Flask and Gunicorn; the Streamlit app remains available for local use.
+
 The app runs immediately with a deterministic **demo model** trained on generated examples. Its predictions are illustrative, not market-validated. For deployment, train on a representative dataset of device specifications and known price tiers.
 
 ## Train with labeled data
